@@ -1,0 +1,604 @@
+/* THE GENERAL STYLZ */
+
+:root {
+  --text-primary: #0C0C0C;
+  --text-secondary: #F6F6F6;
+  --background-primary: #F6F6F6;
+  --over-background: #FFF;
+  --navbar: rgba(238, 238, 238, 0.7);
+  --text-colored: #4D86F0;
+  --element: #B2CDFF;
+}
+
+.dark-theme {
+  --text-primary: #F6F6F6;
+  --text-secondary: #0C0C0C;
+  --background-primary: #222325;
+  --over-background: #2D2F34;
+  --navbar: rgba(48,54,58,0.30);
+  --text-colored: #3894FF;
+  --element: #134886;
+}
+
+.rounded-corners{
+  border-radius: 36px;
+}
+@media (max-width: 600px) {
+  .rounded-corners {
+    border-radius: 24px;
+  }
+}
+
+.rounded-corners-img{
+  border-radius: 36px;
+}
+@media (max-width: 600px) {
+  .rounded-corners-img {
+    border-radius: 12px;
+  }
+}
+
+body {
+  font-family: 'General Sans', sans-serif;
+  font-weight: 500;
+  background-color: var(--background-primary);
+}
+
+.site-padding {
+  padding-right: 24px;
+  padding-left: 24px;
+}
+@media (max-width: 600px) {
+  .site-padding {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+}
+
+.horizontal-space{
+  display: none;
+}
+@media (max-width: 767px) {
+  .horizontal-space {
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+}
+
+li {
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: -0.15pt;
+  margin: 0;
+  line-height: 1.7rem;
+  color: var(--text-primary);
+}
+@media (max-width: 1100px) {
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+}
+
+.caption{
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.1rem;
+}
+@media (max-width: 1100px) {
+  .caption {
+    font-size: 1rem;
+    line-height: 1.1rem;
+  }
+}
+
+.page-link{
+  font-size: 1.3rem;
+  font-weight: 501;
+  letter-spacing: -0.1pt;
+  margin: 0;
+  line-height: 1.9rem;
+  color: var(--text-primary);
+}
+.page-link:hover{
+  opacity: 80%;
+}
+
+
+h1 {
+  font-weight: 600;
+  font-size: 5.2rem;
+  letter-spacing: -1pt;
+  line-height: 5.2rem;
+  color: var(--text-colored);
+  text-align: center;
+}
+@media (max-width: 1100px) {
+  h1 {
+    font-size: 3.8rem;
+    line-height: 3.8rem;
+  }
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 2.8rem;
+    line-height: 3rem;
+    color: var(--text-primary);
+    text-align: left;
+  }
+}
+
+
+
+h2 {
+  font-weight: 501;
+  font-size: 5rem;
+  letter-spacing: -0.2pt;
+  line-height: 5rem;
+}
+@media (max-width: 1100px) {
+  h2 {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+  }
+}
+
+
+
+
+h3 {
+  font-family:'General Sans', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 501;
+  letter-spacing: -0.25pt;
+  line-height: 3.3rem;
+}
+@media (max-width: 1100px) {
+  h3 {
+    font-size: 1.9rem;
+    line-height: 2rem;
+  }
+}
+
+
+
+
+
+h4 {
+  font-family:'General Sans', sans-serif;
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 501;
+  letter-spacing: -0.2pt;
+  line-height: 2.2rem;
+}
+@media (max-width: 1100px) {
+  h4 {
+    font-size: 1.7rem;
+    line-height: 1.8rem;
+  }
+}
+
+
+
+
+
+
+
+
+.list-item-big{
+  font-size: 1.6rem;
+  letter-spacing: -0.1pt;
+  line-height: 2.7rem;
+  gap:4px;
+}
+@media (max-width: 1100px) {
+  .list-item-big {
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+  }
+}
+
+
+.list-icon{
+  height: 24pt;
+  width: auto;
+}
+
+
+.text-bold{
+  font-family: 'General Sans', sans-serif;
+}
+
+
+.isolated-text{
+  color: var(--text-primary);
+}
+
+
+div.wrap {
+	width: 100%;
+	margin: auto;
+	text-align: left;
+}
+
+.text-colored{
+  color: var(--text-colored);
+}
+
+.text-default-color{
+  color: var(--text-primary);
+}
+
+
+/* ANIM */
+
+.fade-in-element {
+  /* Hide the element by default */
+  opacity: 0;
+
+  /* Use a transition to animate the element's opacity */
+  transition: opacity 1s;
+}
+
+.fade-in-element.is-visible {
+  /* When the "in-view" class is added, set the element's opacity to 1 to make it visible */
+  opacity: 1;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(10%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fade-in-element.is-visible {
+  /* Apply the animation to the element */
+  animation: slideIn 0.7s;
+}
+
+/* THE SPECIFIC STYLZ */
+
+
+
+
+/* Navbar __________________________________________________*/
+
+.navbar-float {
+  background-color: var(--navbar);
+  border-radius: 29px;
+  padding: 0.7rem 0.8rem 0.7rem 1.2rem;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  position: sticky;
+  top: 1.6rem;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+
+.btn-sara{
+  font-family: 'General Sans', sans-serif;
+  font-weight: 500;
+  padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+  border: 1px;
+  border-radius: 100px;
+  height: 3rem;
+}
+
+.btn-theme {
+  background-color: transparent;
+  color: var(--text-primary);
+  font-family: 'General Sans', sans-serif;
+  font-weight: 500;
+  border-radius: 100px;
+  margin-left: 0.4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.btn-theme:hover {
+  background-color: var(--text-colored);
+}
+.nav-link-sara{
+  color: var(--text-primary);
+}
+.nav-link-sara:hover {
+  color: var(--text-colored);
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: var(--text-primary);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+
+
+
+
+
+
+
+/* Header __________________________________________________*/
+
+.intro-sara-l {
+  position: relative;
+  overflow: hidden;
+  height: 105vh;
+}
+.svg-lg{
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: -5rem;
+  z-index: -1;
+}
+@media (max-width: 1000px) {
+  .svg-lg {
+    left: -30rem;
+  }
+}
+@media (max-width: 500px) {
+  .svg-lg {
+    left: -56rem;
+  }
+}
+
+/* End of Header */
+
+
+
+
+
+
+
+
+
+/* Work ____________________________________________________ */
+
+.padding-to-none{
+}
+@media (max-width: 900px) {
+  .padding-to-none {
+    padding: 0;
+  }
+}
+
+@media (min-width: 900px) {
+  .sara-card {
+    padding: 3rem 2.5rem;
+    background-color: var(--over-background);
+  }
+}
+@media (max-width: 900px) {
+  .sara-card {
+    padding: 1.2rem 1.4rem;
+    background-color: var(--over-background);
+  }
+}
+@media (max-width: 500px) {
+  .sara-card {
+    padding: 1.2rem;
+  }
+}
+
+.work-text{
+  gap: 1.1rem;
+  text-align: center;
+  margin: 0 auto;
+}
+@media (max-width: 500px) {
+  .work-text {
+    padding: 0.1rem;
+  }
+}
+
+.align-center-left{
+  margin: 0 auto;
+  text-align: center; 
+}
+@media (max-width: 500px) {
+  .align-center-left {
+    text-align: left;
+    margin: 0;
+  }
+}
+
+
+.small-img{
+  height:100%;
+  object-fit: cover;
+}
+@media (max-width: 1000px) {
+  .small-img {
+    height: auto;
+    width: 40%;
+  }
+}
+@media (max-width: 500px) {
+  .small-img {
+    height: auto;
+    width: 30%;
+    padding-top: 1rem;
+  }
+}
+
+
+
+.arrow-button {
+    display: flex;
+    transition: all .3s ease;
+    cursor: pointer;
+    align-items: center;
+    gap: 6px;
+}
+
+.arrow-button > .arrow {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentcolor;
+    border-bottom: 2px solid currentcolor; /*var(--text-primary)*/
+    position: relative;
+    transform: rotate(-45deg);
+    margin: 0 8px;
+    transition: all .3s ease;
+}
+
+.arrow-button > .arrow::before {
+    display: block;
+    background-color: currentcolor; /*currentcolor var(--text-primary)*/
+    width: 10px;
+    transform-origin: bottom right;
+    height: 2px;
+    position: absolute;
+    opacity: 1;
+    bottom: calc(-2px / 2);
+    transform: rotate(45deg);
+    transition: all .3s ease;
+    content: "";
+    right: 0;
+}
+
+.arrow-button:hover > .arrow {
+    transform: rotate(-45deg) translate(4px, 4px);
+    border-color: text-hover-color;
+}
+
+.arrow-button:hover > .arrow::before {
+    opacity: 1;
+    width: 12px;
+}
+
+
+
+
+
+
+
+
+.work-title {
+  /*background-image: var(--gradient);*/
+  border-style: solid;
+  border-color: var(--text-primary);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;I
+  height: 100%;
+}
+
+
+.column {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 55rem;
+}
+
+.spacer-xl{
+  margin-bottom: 10rem;
+}
+@media (max-width: 500px) {
+  .spacer-xl {
+    margin-bottom: 6rem;
+  }
+}
+
+.spacer-l{
+  margin-bottom: 6rem;
+}
+
+.spacer-m{
+  margin-bottom: 2.4rem;
+}
+
+.spacer-s{
+  margin-bottom: 1.7rem;
+}
+
+.spacer-xs{
+  margin-bottom: 1rem;
+}
+@media (max-width: 500px) {
+  .spacer-xs {
+    margin-bottom: 0.2rem;
+  }
+}
+
+
+.spacer-xxs{
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 500px) {
+  .spacer-xxs {
+    margin-bottom: 0.1rem;
+  }
+}
+
+
+
+.card-link {
+  width: 200px;
+}
+
+.card-list {
+  padding-bottom: 0.5rem;
+}
+
+
+/* Coffee */
+
+.btn-box{
+  font-family: 'General Sans', sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 0.2pt;
+  padding: 2.6rem 1.9rem;
+}
+
+/* End of Work section */
+
+
+/* About me box */
+/*.card-img-about{
+  width: 72%;
+  position: absolute;
+  right: 0;
+  bottom: 0rem;
+  z-index: 0;
+}*/
+
+.list-spaced {
+  line-height: 2.5rem;
+  letter-spacing: 0.2pt;
+}
+
+.margin-bottom {
+  margin-bottom: 3.5rem;
+}
+
+
+
+
+
+/* End of About me box */
+
+
+
+
+
+
+
+
+/* Contact me */
+
