@@ -370,6 +370,16 @@ div.wrap {
 }
 
 
+@media (max-width: 500px) {
+  .above-xs {
+    display: none;
+  }
+}
+@media only screen and (min-width: 500px) {
+  .only-xs {
+    display: none;
+  }
+}
 
 
 /* End of Header */
